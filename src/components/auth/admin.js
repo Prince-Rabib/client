@@ -88,7 +88,7 @@ const Register =()=>{
    
     useEffect(async() => {
     try {
-        const data = await axios.get("http://localhost:8000/api/appointment");
+        const data = await axios.get("https://serverm1235.herokuapp.com/api/appointment");
 
         console.log(data)
         if(data.data){
@@ -117,7 +117,7 @@ const Register =()=>{
         
         try {
 
-            let data = await axios.post("http://localhost:8000/api/appointment/update",{                
+            let data = await axios.post("https://serverm1235.herokuapp.com/api/appointment/update",{                
                 "mechanic":mechanic,
                 "date":setupDate,
                 "id":value
