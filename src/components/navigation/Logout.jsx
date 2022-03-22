@@ -32,7 +32,7 @@ const Logout = () => {
     const handleClose = () => {
       
       localStorage.removeItem("authToken");
-      history.push('/login');
+      history.push('/appointment');
       setAnchorEl(null);
 
     };
