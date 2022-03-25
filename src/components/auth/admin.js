@@ -68,6 +68,24 @@ const Register =()=>{
 
      })
 
+     const option_list = [
+        {
+         name:"Abdul karim"
+        },
+                {
+          name:"Bellal Ahmed"
+        },
+                {
+          name:"Rubel Hossain"
+        },
+                {
+          name:"Sakawat Chowdhury"
+        },
+                {
+          name:"Ibrahim Khan"
+        },
+     ]
+
         const history = useHistory();
 
         const handleRoute = (result) =>{
@@ -88,7 +106,7 @@ const Register =()=>{
    
     useEffect(async() => {
     try {
-        const data = await axios.get("https://serverm1235.herokuapp.com/api/appointment");
+        const data = await axios.get("http://localhost:5000/api/appointment");
 
         console.log(data)
         if(data.data){
@@ -117,7 +135,7 @@ const Register =()=>{
         
         try {
 
-            let data = await axios.post("https://serverm1235.herokuapp.com/api/appointment/update",{                
+            let data = await axios.post("http://localhost:5000/api/appointment/update",{                
                 "mechanic":mechanic,
                 "date":setupDate,
                 "id":value
@@ -200,13 +218,16 @@ const Register =()=>{
                               onChange={(e)=>setmechanic(e.target.value)}
                               >
                               <option value=" ">{row.mechanic}</option>
-                              <option value={"Abdul karim"}>Abdul karim</option>
-                              <option value={"Bellal Ahmed"}>Bellal Ahmed</option>
-                              <option value={"Rubel Hossain"}>Rubel Hossain</option>
-                              <option value={"Sakawat Chowdhury"}>Sakawat Chowdhury</option>
-                              <option value={"Ibrahim Khan"}>Ibrahim Khan</option>
-                              </Select>  
+                              {option_list.map(result=>{
+                                  if(result.name != row.mechanic){
+                                    return (
+                                        <option value={result.name}>{result.name}</option>
+                                     )
+                                    }
+                              })}
+                              
 
+                             </Select>
 
                             </TableCell>
                             

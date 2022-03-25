@@ -105,23 +105,12 @@ const Navbar = () => {
                     Admin
                 </Button>
                 </div>
-             <div className={classes.search}>
-                    <Search/>
-                    <InputBase placeholder="Search..." className={classes.InputBase}/>
-                    <Cancel className={classes.cancel} onClick={()=> setOpen(false)}/>
-             </div>
              <div className={classes.icons} >
                  <Search className={classes.searchButton} onClick={()=> setOpen(true)}/>
-             <Badge badgeContent={4} color="secondary" className={classes.badge}>
-               <Mail />
-               </Badge>
-               <Badge badgeContent={4} color="secondary" className={classes.badge}>
-               <Notifications />
-                </Badge>
                 <Logout/>
              </div>            
           </Toolbar>
-      </AppBar>
+     </AppBar>
    )
 };
 
