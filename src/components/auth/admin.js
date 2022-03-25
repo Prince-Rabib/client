@@ -106,7 +106,7 @@ const Register =()=>{
    
     useEffect(async() => {
     try {
-        const data = await axios.get("http://localhost:5000/api/appointment");
+        const data = await axios.get("https://serverm1235.herokuapp.com/api/appointment");
 
         console.log(data)
         if(data.data){
@@ -115,7 +115,7 @@ const Register =()=>{
  
     }   catch (error) {
      
-        history.push('/login')
+        history.push('/appointment')
     }
   
    },[rows])
@@ -135,7 +135,7 @@ const Register =()=>{
         
         try {
 
-            let data = await axios.post("http://localhost:5000/api/appointment/update",{                
+            let data = await axios.post("https://serverm1235.herokuapp.com/api/appointment/update",{                
                 "mechanic":mechanic,
                 "date":setupDate,
                 "id":value
@@ -190,7 +190,7 @@ const Register =()=>{
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {rows.map((row) => (
+                        {rows.slice(0).reverse().map((row) => (
                           <TableRow key={row._id}>
                             <TableCell component="th" scope="row">
                              {row.name}
