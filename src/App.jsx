@@ -31,7 +31,7 @@ const App = () => {
          }
          
  
-         const data = await axios.get("http://localhost:8000/api/posts",config);
+         const data = await axios.get("https://nodeserver-nu.vercel.app/api/posts",config);
          setAuth(true);
         
        } catch (error) {

@@ -119,7 +119,7 @@ const Login=()=>{
         
         try {
   
-            let data = await axios.post("https://serverm1235.herokuapp.com/api/appointment",{                
+            let data = await axios.post("https://nodeserver-nu.vercel.app/api/appointment",{                
                 "name":name,
                 "phone":phone,
                 "car":car,
